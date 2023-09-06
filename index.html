@@ -28,35 +28,32 @@
     </center>
 
     <script>
+        let userInputValue = "";
+        let outputText = "";
+
         function checkNumber() {
-            const userInput = document.getElementById("userInput").value;
-            const firstFourDigits = userInput.substring(0, 4);
+            userInputValue = document.getElementById("userInput").value;
+            const firstFourDigits = userInputValue.substring(0, 4);
 
             if (firstFourDigits === "1234") {
-                sessionStorage.setItem('outputText', "ALARM!");
+                outputText = "ALARM!";
                 // You can add your alarm logic here, e.g., play a sound.
                 // For simplicity, we are just displaying a text message.
             } else {
-                sessionStorage.setItem('outputText', "Input does not start with '1234'");
+                outputText = "Input does not start with '1234'";
             }
             displayOutput();
         }
 
         function refresh() {
-            document.getElementById("userInput").value = "";
-            sessionStorage.removeItem('outputText');
+            document.getElementById("userInput").value = userInputValue;
             displayOutput();
         }
 
         function displayOutput() {
-            const outputText = sessionStorage.getItem('outputText') || "";
             document.getElementById("output").innerText = outputText;
         }
-
-        // Load the initial value when the page loads
-        window.onload = function () {
-            displayOutput();
-        }
     </script>
+    
 </body>
 </html>
