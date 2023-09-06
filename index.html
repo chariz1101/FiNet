@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiNet Official</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+    <h1>FiNet</h1>
+    <h2>The Network Finder</h2>
+
+    <form>
+        <p>Enter the entire number or the first 4 numbers.</p>
+        <input type="text" id="userInput">
+        <br>
+        <button type="submit" onclick="checkNumber()">
+            Enter
+        </button>
+        <button onclick="refresh()">
+            Refresh
+        </button>
+    </form>
+
+    <p id="output"></p>
+
+    </center>
+
+    <script>
+        let outputText = '';
+
+        function checkNumber() {
+            const userInput = document.getElementById("userInput").value;
+            const firstFourDigits = userInput.substring(0, 4);
+
+            if (firstFourDigits === "1234") {
+                outputText = "ALARM!";
+                // You can add your alarm logic here, e.g., play a sound.
+                // For simplicity, we are just displaying a text message.
+            } else {
+                outputText = "Input does not start with '1234'";
+            }
+            displayOutput();
+        }
+
+        function refresh() {
+            document.getElementById("userInput").value = "";
+            outputText = "";
+            displayOutput();
+        }
+
+        function displayOutput() {
+            document.getElementById("output").innerText = outputText;
+        }
+        
+    </script>
+</body>
+</html>

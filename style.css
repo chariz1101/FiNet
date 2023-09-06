@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family:sans-serif;
+    font-size: 20vh;
+    margin-top: 20vh;
+    color:rgb(12, 142, 0);
+}
+
+h2 {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 4vh;
+}
+
+form {
+    margin-top: 5vh;
+}
+
+p {
+    font-family:sans-serif;
+    font-size: 2vh;
+    padding: 1vh;
+}
+
+input {
+    
+    height: 4vh;
+    font-family:sans-serif;
+    font-size: 3vh;
+}
+
+button {
+    margin-top: 2vh;
+    height: 3.5vh;
+    width: 5vw;
+}
