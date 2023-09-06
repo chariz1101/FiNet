@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FiNet Official</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>  
 </head>
 <body>
     <center>
@@ -33,10 +34,18 @@
             const firstFourDigits = userInput.substring(0, 4);
 
             if (firstFourDigits === "1234") {
+                Swal.fire ({
+                    title: 'Sweet!',
+                    text: 'Modal with a custom image.',
+                    imageUrl: 'https://unsplash.it/400/200',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                })
                 sessionStorage.setItem('outputText', "ALARM!");
-                // You can add your alarm logic here, e.g., play a sound.
-                // For simplicity, we are just displaying a text message.
-            } else {
+            } 
+            
+            else {
                 sessionStorage.setItem('outputText', "Input does not start with '1234'");
             }
             displayOutput();
@@ -57,6 +66,8 @@
         window.onload = function () {
             displayOutput();
         }
+
+        
     </script>
 </body>
 </html>

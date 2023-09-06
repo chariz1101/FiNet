@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiNet Official</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>  
+</head>
+<body>
+    <center>
+    <h1>FiNet</h1>
+    <h2>The Network Finder</h2>
+
+    <button id="final">Now</button>
+
+    </center>
+
+    <script>
+        document.getElementById('final').addEventListener('click', function(){
+                Swal.fire ({
+                    title: 'Sweet!',
+                    text: 'Modal with a custom image.',
+                    imageUrl: 'https://unsplash.it/400/200',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                })})
+
+
+    </script>
+</body>
+</html>
