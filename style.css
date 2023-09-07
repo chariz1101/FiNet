@@ -37,3 +37,7 @@ button {
     height: 3.5vh;
     width: 5vw;
 }
+
+#userInput {
+    text-align: center;
+}

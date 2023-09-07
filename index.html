@@ -13,13 +13,13 @@
     <h2>The Network Finder</h2>
 
     <form>
-        <p>Enter the entire number or the first 4 numbers.</p>
+        <p>Enter the entire number or the first 5 numbers.</p>
         <input type="text" id="userInput">
         <br>
-        <button type="submit" onclick="checkNumber()">
+        <button type="button" onclick="checkNumber()">
             Enter
         </button>
-        <button onclick="refresh()">
+        <button type="button" onclick="refresh()">
             Refresh
         </button>
     </form>
@@ -33,41 +33,82 @@
             const userInput = document.getElementById("userInput").value;
             const firstFourDigits = userInput.substring(0, 4);
 
-            if (firstFourDigits === "1234") {
-                Swal.fire ({
-                    title: 'Sweet!',
-                    text: 'Modal with a custom image.',
-                    imageUrl: 'https://unsplash.it/400/200',
+            if (["0817", "09173", "09175", "09176", "09178", "09253", "09255", "09256", "09257", "09258"].includes(firstFourDigits)) {
+                Swal.fire({
+                    title: 'Globe Postpaid',
+                    text: userInput + ' is a number from Globe Telecom.',
+                    imageUrl: 'logos/globe.png',
                     imageWidth: 400,
                     imageHeight: 200,
                     imageAlt: 'Custom image',
-                })
-                sessionStorage.setItem('outputText', "ALARM!");
+                    allowOutsideClick: false, // Prevent modal from closing
+                });
+                sessionStorage.setItem('outputText', "Globe Postpaid");
+            } 
+
+            else if (["0922", "0923", "0924", "0925", "0931", "0932", "0933", "0934", "0940", "0941", "0942", "0943", "0973", "0974"].includes(firstFourDigits)) {
+                Swal.fire({
+                    title: 'Sun',
+                    text: userInput + ' is a number from Sun Cellular.',
+                    imageUrl: 'logos/sun.png',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                    allowOutsideClick: false, // Prevent modal from closing
+                });
+                sessionStorage.setItem('outputText', "Sun");
+            } 
+            
+            else if (["0907", "0909", "0910", "0912", "0930", "0938", "0946", "0948", "0950"].includes(firstFourDigits)) {
+                Swal.fire({
+                    title: 'TNT',
+                    text: userInput + ' is a number from Talk N Text.',
+                    imageUrl: 'logos/tnt.jpg',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                    allowOutsideClick: false, // Prevent modal from closing
+                });
+                sessionStorage.setItem('outputText', "TNT");
+            } 
+
+            else if (["0908", "0918", "0919", "0920", "0921", "0928", "0929", "0939", "0946", "0947", "0949", "0951", "0961", "0998", "0999"].includes(firstFourDigits)) {
+                Swal.fire({
+                    title: 'Smart',
+                    text: userInput + ' is a number from Smart Communications.',
+                    imageUrl: 'logos/smart.png',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                    allowOutsideClick: false, // Prevent modal from closing
+                });
+                sessionStorage.setItem('outputText', "Smart");
+            } 
+
+            else if (["0905", "0917", "0936", "0954", "0966", "0977", "0995", "0906", "0926", "0937", "0955", "0967", "0978", "0996", "0915", "0927", "0945", "0956", "0975", "0979", "0997", "0916", "0935", "0953", "0965", "0976", "0994"].includes(firstFourDigits)) {
+                Swal.fire({
+                    title: 'Globe/TM',
+                    text: userInput + ' is a number from Globe or TM.',
+                    imageUrl: 'logos/globetm.jpg',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                    allowOutsideClick: false, // Prevent modal from closing
+                });
+                
+                sessionStorage.setItem('outputText', "Globe/TM");
             } 
             
             else {
-                sessionStorage.setItem('outputText', "Input does not start with '1234'");
+                Swal.fire("Error!", "The number is invalid.", "error");
             }
-            displayOutput();
         }
 
         function refresh() {
             document.getElementById("userInput").value = "";
             sessionStorage.removeItem('outputText');
-            displayOutput();
         }
-
-        function displayOutput() {
-            const outputText = sessionStorage.getItem('outputText') || "";
-            document.getElementById("output").innerText = outputText;
-        }
-
-        // Load the initial value when the page loads
-        window.onload = function () {
-            displayOutput();
-        }
-
-        
     </script>
+    
 </body>
 </html>
