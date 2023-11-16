@@ -34,8 +34,8 @@ input {
 
 button {
     margin-top: 2vh;
-    height: 3.5vh;
-    width: 5vw;
+    height: 30px;
+    width: 50px;
 }
 
 #userInput {
